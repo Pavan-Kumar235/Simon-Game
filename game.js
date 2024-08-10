@@ -27,7 +27,7 @@ function nextSequence() {
 
     $("#" + randomColor).fadeOut(100).fadeIn(100);
     
-    /*var audio = new Audio("audio/" + randomColor + ".mp3");
+    /*var audio = new Audio(randomColor + ".mp3");
     audio.play();*/
 
     gamePattern.push(randomColor);
@@ -47,7 +47,7 @@ $(".box").click(function() {
 });
 
 function playSound(colorName) {
-    var audio = new Audio("audio/" + colorName + ".mp3");
+    var audio = new Audio(colorName + ".mp3");
     audio.play();
 }
 
@@ -68,7 +68,7 @@ function checkAnswer(currentLevel) {
         }
     }
     else {
-        var audio = new Audio("audio/wrong.mp3");
+        var audio = new Audio("wrong.mp3");
         audio.play();
         $("body").addClass("wrong");
         setTimeout(function() {
