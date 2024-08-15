@@ -11,6 +11,8 @@ $(document).keypress(function() {
     if(start) {
         $("h1").text("level " + level)
         nextSequence();
+        $(".ai").text("AI : ");
+        $(".you").text("You : ");
         start = false;
     }
 });
@@ -30,7 +32,7 @@ function nextSequence() {
     /*var audio = new Audio(randomColor + ".mp3");
     audio.play();*/
 
-    gamePattern.push(randomColor);
+    gamePattern.push(" " + randomColor + " ");
 
     playSound(randomColor);
 }
@@ -39,7 +41,7 @@ $(".box").click(function() {
     //var userChosenColor = this.id;                //  1- st way to find out id value in array
     var userChosenColor = $(this).attr("id");       //  2- nd wat to find out id value in array
 
-    userClickedPattern.push(userChosenColor);
+    userClickedPattern.push(" " + userChosenColor + " ");
 
     playSound(userChosenColor);
     clickedAnimation(userChosenColor);
@@ -75,10 +77,15 @@ function checkAnswer(currentLevel) {
             $("body").removeClass("wrong");
         }, 200);
         $("h1").text("Game Over, Press any key to Restart");
+        results();
         reStart();
     }
 }
 
+function results() {
+    $(".ai").append(gamePattern);
+    $(".you").append(userClickedPattern);
+}
 function reStart() {
     level = 0;
     gamePattern = [];
