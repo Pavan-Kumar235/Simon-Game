@@ -18,10 +18,11 @@ header h1 {
     gap: 30px;
 }
 .box {
-    height: 190px;
-    width: 190px;
+    height: 150px;
+    width: 150px;
     border: 10px solid black;
     border-radius: 40px;
+    cursor: pointer;
 }
 .green {
     background-color: green;
@@ -41,4 +42,42 @@ header h1 {
 }
 .wrong {
     background-color: red;
+}
+
+.results {
+    display: block;
+    margin-top: 60px;
+    width: 30%;
+    max-width: fit-content;
+    padding: 30px;
+    text-align: left;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 10px rgb(59, 71, 116);
+}
+.results-display {
+    display: none;
+}
+.results h2 {
+    margin: 0px;
+    padding: 0px;
+}
+
+.instructions {
+    color: white;
+    margin: 60px 0px 60px 0;
+}
+.instructions h2 {
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    font-size: 40px;
+    color: green;
+}
+h3 {
+    font-size: 21px;
+    color: rgb(0, 202, 0);
+}
+.instructions h3, .instructions p {
+    margin-left: 100px;
 }
